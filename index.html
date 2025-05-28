@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Engineering PYQ Repository</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* Reset & base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #283593;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 30px;
+  box-shadow: 0 4px 12px rgba(40, 53, 147, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  user-select: none;
+}
+
+.nav-links a,
+.nav-links button {
+  color: #fff;
+  margin-left: 25px;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 17px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links button:hover {
+  color: #ffd740;
+}
+
+/* Container */
+.container {
+  flex-grow: 1;
+  max-width: 1000px;
+  margin: 30px auto 60px;
+  padding: 0 10px;
+}
+
+/* Search Bar */
+.search-bar {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.search-bar input {
+  padding: 12px 20px;
+  width: 65%;
+  max-width: 400px;
+  border-radius: 30px;
+  border: 2px solid #283593;
+  font-size: 16px;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: inset 0 0 5px rgba(40, 53, 147, 0.2);
+}
+
+.search-bar input:focus {
+  border-color: #ffd740;
+  box-shadow: 0 0 10px #ffd740;
+  outline: none;
+}
+
+.search-bar button {
+  padding: 12px 24px;
+  border: none;
+  background-color: #ffd740;
+  color: #283593;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-left: 15px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(255, 215, 64, 0.4);
+}
+
+.search-bar button:hover {
+  background-color: #ffca28;
+  box-shadow: 0 6px 12px rgba(255, 202, 40, 0.6);
+}
+
+/* Main layout container */
+/* Main layout container */
+body {
+  margin: 0;
+  padding: 60px 80px;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #f5f7fa, #e4ecf2);
+  color: #1e272e;
+  line-height: 1.6;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+
+/* Each YEAR block full width container */
+.year-block {
+  background-color: #e8f0fe;
+  padding: 30px;
+  margin-bottom: 40px;
+  border-left: 10px solid #1e88e5;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(30, 136, 229, 0.15);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0d47a1;
+}
+
+/* Branch section within year */
+.branch-block {
+  background-color: #ffffff;
+  margin: 20px 0;
+  padding: 25px 30px;
+  border-radius: 10px;
+  border-left: 6px solid #1565c0;
+  box-shadow: 0 3px 10px rgba(21, 101, 192, 0.1);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0d47a1;
+}
+
+/* Semester block */
+.semester-block {
+  margin-top: 15px;
+  margin-left: 30px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #37474f;
+}
+
+/* Paper list under semester */
+.semester-block ul {
+  margin-left: 40px;
+  margin-top: 10px;
+  padding-left: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Paper link as card */
+.paper-link {
+  background-color: #f1f8ff;
+  color: #1a237e;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 16px 24px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(21, 101, 192, 0.1);
+  border: 2px solid transparent;
+  min-width: 220px;
+  max-width: 100%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.paper-link:hover {
+  background-color: #fff3e0;
+  color: #ff6f00;
+  border-color: #ff6f00;
+  box-shadow: 0 5px 15px rgba(255, 111, 0, 0.25);
+}
+
+.paper-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #263238;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+ew-btn,
+.delete-btn {
+  font-size: 0.95rem;
+  margin-left: 8px;
+  vertical-align: middle;
+  background-color: transparent;
+  border: none;
+  color: #283593;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.view-btn:hover {
+  color: #43a047; /* green hover */
+}
+
+.delete-btn:hover {
+  color: #e53935; /* red hover */
+}
+
+/* Button group */
+.btn-group {
+  margin-top: 10px;
+  display: flex;
+  gap: 14px;
+}
+
+.btn-download,
+.btn-delete {
+  font-size: 15px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-download {
+  background-color: #43a047;
+  color: white;
+}
+
+.btn-download:hover {
+  background-color: #2e7d32;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.5);
+}
+
+.btn-delete {
+  background-color: #e53935;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #b71c1c;
+  box-shadow: 0 4px 12px rgba(183, 28, 28, 0.5);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.55);
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px 35px;
+  border-radius: 16px;
+  width: 440px;
+  max-width: 95%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: fadeInScale 0.3s ease forwards;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 22px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #666;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #000;
+}
+
+/* Form Inputs */
+label {
+  display: block;
+  margin-top: 18px;
+  font-weight: 600;
+  color: #444;
+  user-select: none;
+}
+
+input[type="text"],
+select,
+input[type="file"],
+textarea {
+  width: 100%;
+  padding: 10px 16px;
+  margin-top: 6px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  resize: vertical;
+  font-family: inherit;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+input[type="text"]:focus,
+select:focus,
+input[type="file"]:focus,
+textarea:focus {
+  border-color: #283593;
+  box-shadow: 0 0 8px #283593;
+  outline: none;
+}
+
+/* Submit button */
+button[type="submit"] {
+  margin-top: 26px;
+  width: 100%;
+  padding: 14px 0;
+  background-color: #283593;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 40px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(40, 53, 147, 0.6);
+}
+
+button[type="submit"]:hover {
+  background-color: #3949ab;
+  box-shadow: 0 6px 18px rgba(57, 73, 171, 0.8);
+}
+
+/* Suggestion Section */
+#suggestions-section {
+  max-width: 1000px;
+  margin: 25px auto 60px;
+  padding: 25px 30px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.1);
+}
+
+#suggestions-section h3 {
+  margin-top: 0;
+  font-weight: 700;
+  color: #283593;
+  user-select: none;
+}
+
+#suggestionForm textarea {
+  height: 90px;
+  font-size: 16px;
+}
+
+#suggestionList {
+  margin-top: 22px;
+  max-height: 280px;
+  overflow-y: auto;
+  border-top: 1px solid #ddd;
+  padding-top: 18px;
+}
+
+.suggestion-item {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 14px 20px;
+  margin-bottom: 14px;
+  font-size: 15.5px;
+  color: #222;
+  word-wrap: break-word;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.suggestion-delete-btn {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: #e53935;
+  font-weight: 700;
+  font-size: 19px;
+  cursor: pointer;
+  user-select: none;
+  display: none;
+}
+
+.suggestion-item.admin .suggestion-delete-btn {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 550px) {
+  .search-bar input {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .search-bar button {
+    width: 100%;
+    margin-left: 0;
+  }
+  .year-block, .branch-block, .semester-block {
+    padding: 15px 18px;
+  }
+}
+
+/* Home Button */
+.home-button {
+  padding: 10px 20px;
+  margin: 14px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #43a047;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(67, 160, 71, 0.6);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.home-button:hover {
+  background-color: #388e3c;
+  box-shadow: 0 6px 16px rgba(56, 142, 60, 0.8);
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <button id="homeBtn" class="home-button">Home</button>
+  </header>
+
+  <nav class="navbar">
+    <h1>Engineering PYQ Repository</h1>
+    <div class="nav-links">
+      <a href="#" id="adminLoginBtn"><i class="fa-solid fa-user-shield"></i> Admin Login</a>
+      <a href="#" id="adminLogoutBtn" style="display:none;"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      <a href="#" id="uploadBtn" style="display:none;"><i class="fa-solid fa-upload"></i> Upload</a>
+    </div>
+  </nav>
+<div class="home">
+  <div class="container">
+    <div class="search-bar">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by Year, Branch, or Semester..."
+        aria-label="Search Question Papers"
+      />
+      <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+      <button id="clearSearchBtn" style="display:none;">Clear</button>
+    </div>
+
+    <h2>Available Question Papers</h2>
+
+    <div id="pyqContainer">
+      <!-- Question Papers will load here -->
+    </div>
+  </div>
+
+  <!-- Suggestion Section -->
+  <section id="suggestions-section">
+    <h3>Have Suggestions? We’re Listening!</h3>
+    <form id="suggestionForm">
+      <textarea
+        id="suggestionInput"
+        placeholder="Write your suggestion here..."
+        aria-label="Suggestion input"
+        required
+      ></textarea>
+      <button type="submit">Submit Suggestion</button>
+    </form>
+
+    <div id="suggestionList" aria-live="polite" aria-relevant="additions">
+      <!-- Suggestions will show here -->
+    </div>
+  </section>
+
+  <!-- Admin Login Modal -->
+  <div class="modal" id="adminLoginModal" role="dialog" aria-modal="true" aria-labelledby="adminLoginTitle">
+    <div class="modal-content">
+      <span class="close-btn" id="adminModalCloseBtn" title="Close">&times;</span>
+      <h2 id="adminLoginTitle">Admin Login</h2>
+      <form id="adminLoginForm">
+        <label for="adminPassword">Enter Admin Password:</label>
+        <input type="password" id="adminPassword" required autocomplete="off" />
+        <button type="submit">Login</button>
+      </form>
+      <p id="loginError" style="color:#e53935; margin-top:12px; display:none;"></p>
+    </div>
+  </div>
+
+  <!-- Upload Modal -->
+  <div class="modal" id="uploadModal" role="dialog" aria-modal="true" aria-labelledby="uploadTitle">
+    <div class="modal-content">
+      <span class="close-btn" id="uploadModalCloseBtn" title="Close">&times;</span>
+      <h2 id="uploadTitle">Upload New Question Paper</h2>
+      <form id="uploadForm">
+        <label for="paperTitle">Paper Title:</label>
+        <input type="text" id="paperTitle" required placeholder="Example: Data Structures Paper 1" />
+
+        <label for="paperYear">Year:</label>
+        <select id="paperYear" required>
+          <option value="" disabled selected>Select Year</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+        </select>
+
+        <label for="paperBranch">Branch:</label>
+        <select id="paperBranch" required>
+          <option value="" disabled selected>Select Branch</option>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Mechanical">Mechanical</option>
+          <option value="Electrical">Electrical</option>
+          <option value="Civil">Civil</option>
+          <option value="Electronics">Electronics</option>
+          <!-- Add more branches as needed -->
+        </select>
+
+        <label for="paperSemester">Semester:</label>
+        <select id="paperSemester" required>
+          <option value="" disabled selected>Select Semester</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+
+        <label for="paperFile">Select PDF File:</label>
+        <input type="file" id="paperFile" accept="application/pdf" required />
+
+        <button type="submit">Upload Paper</button>
+      </form>
+    </div>
+  </div>
+
+<script>
+  // Admin password
+  const ADMIN_PASSWORD = 'admin@123';
+
+  // Elements
+  const adminLoginBtn = document.getElementById('adminLoginBtn');
+  const adminLogoutBtn = document.getElementById('adminLogoutBtn');
+  const uploadBtn = document.getElementById('uploadBtn');
+  const adminLoginModal = document.getElementById('adminLoginModal');
+  const adminModalCloseBtn = document.getElementById('adminModalCloseBtn');
+  const adminLoginForm = document.getElementById('adminLoginForm');
+  const loginError = document.getElementById('loginError');
+
+  const uploadModal = document.getElementById('uploadModal');
+  const uploadModalCloseBtn = document.getElementById('uploadModalCloseBtn');
+  const uploadForm = document.getElementById('uploadForm');
+
+  const pyqContainer = document.getElementById('pyqContainer');
+  const searchInput = document.getElementById('searchInput');
+  const searchBtn = document.getElementById('searchBtn');
+  const clearSearchBtn = document.getElementById('clearSearchBtn');
+
+  const suggestionForm = document.getElementById('suggestionForm');
+  const suggestionInput = document.getElementById('suggestionInput');
+  const suggestionList = document.getElementById('suggestionList');
+
+  // State
+  let isAdmin = false;
+
+  // Storage keys
+  const STORAGE_KEY_PAPERS = 'engineeringPYQPapers';
+  const STORAGE_KEY_SUGGESTIONS = 'engineeringPYQSuggestions';
+
+  // Open admin login modal
+  adminLoginBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    loginError.style.display = 'none';
+    adminLoginModal.style.display = 'flex';
+    adminLoginForm.reset();
+    document.getElementById('adminPassword').focus();
+  });
+
+  // Close admin login modal
+  adminModalCloseBtn.addEventListener('click', () => {
+    adminLoginModal.style.display = 'none';
+  });
+
+  // Handle admin login
+  adminLoginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const pwd = document.getElementById('adminPassword').value.trim();
+    if (pwd === ADMIN_PASSWORD) {
+      isAdmin = true;
+      adminLoginModal.style.display = 'none';
+      updateUIForAdmin();
+      displayPYQ();
+      displaySuggestions();
+    } else {
+      loginError.textContent = 'Incorrect password. Try again.';
+      loginError.style.display = 'block';
+    }
+  });
+
+  // Admin logout
+  adminLogoutBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    isAdmin = false;
+    updateUIForAdmin();
+    displayPYQ();
+    displaySuggestions();
+  });
+
+  // Update UI elements based on admin login state
+  function updateUIForAdmin() {
+    if (isAdmin) {
+      adminLoginBtn.style.display = 'none';
+      adminLogoutBtn.style.display = 'inline-block';
+      uploadBtn.style.display = 'inline-block';
+    } else {
+      adminLoginBtn.style.display = 'inline-block';
+      adminLogoutBtn.style.display = 'none';
+      uploadBtn.style.display = 'none';
+    }
+  }
+
+  // Open upload modal
+  uploadBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    uploadModal.style.display = 'flex';
+    uploadForm.reset();
+    uploadForm.paperTitle.focus();
+  });
+
+  // Close upload modal
+  uploadModalCloseBtn.addEventListener('click', () => {
+    uploadModal.style.display = 'none';
+  });
+
+  // Load papers from localStorage
+  function loadPapers() {
+    const data = localStorage.getItem(STORAGE_KEY_PAPERS);
+    return data ? JSON.parse(data) : {};
+  }
+
+  // Save papers to localStorage
+  function savePapers(data) {
+    localStorage.setItem(STORAGE_KEY_PAPERS, JSON.stringify(data));
+  }
+
+  // Load suggestions from localStorage
+  function loadSuggestions() {
+    const data = localStorage.getItem(STORAGE_KEY_SUGGESTIONS);
+    return data ? JSON.parse(data) : [];
+  }
+
+  // Save suggestions to localStorage
+  function saveSuggestions(data) {
+    localStorage.setItem(STORAGE_KEY_SUGGESTIONS, JSON.stringify(data));
+  }
+
+  // Upload form submission
+  uploadForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const title = uploadForm.paperTitle.value.trim();
+    const year = uploadForm.paperYear.value;
+    const branch = uploadForm.paperBranch.value;
+    const semester = uploadForm.paperSemester.value;
+    const file = uploadForm.paperFile.files[0];
+
+    if (!file || file.type !== 'application/pdf') {
+      alert('Please select a valid PDF file.');
+      return;
+    }
+
+    // Read file as DataURL
+    const reader = new FileReader();
+    reader.onload = function () {
+      const pdfDataUrl = reader.result;
+
+      const papers = loadPapers();
+
+      // Initialize nested structure if not present
+      if (!papers[year]) papers[year] = {};
+      if (!papers[year][branch]) papers[year][branch] = {};
+      if (!papers[year][branch][semester]) papers[year][branch][semester] = [];
+
+      // Add new paper
+      papers[year][branch][semester].push({
+        title,
+        pdfUrl: pdfDataUrl
+      });
+
+      savePapers(papers);
+      uploadModal.style.display = 'none';
+      displayPYQ();
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // Delete paper
+  function deletePaper(year, branch, semester, index) {
+    if (!confirm('Are you sure you want to delete this paper?')) return;
+    const papers = loadPapers();
+    papers[year][branch][semester].splice(index, 1);
+    // Clean empty nested objects
+    if (papers[year][branch][semester].length === 0) {
+      delete papers[year][branch][semester];
+      if (Object.keys(papers[year][branch]).length === 0) {
+        delete papers[year][branch];
+        if (Object.keys(papers[year]).length === 0) {
+          delete papers[year];
+        }
+      }
+    }
+    savePapers(papers);
+    displayPYQ();
+  }
+
+  // Display papers with filters and clickable links
+  function displayPYQ() {
+    const searchText = searchInput.value.trim().toLowerCase();
+    const papers = loadPapers();
+
+    pyqContainer.innerHTML = '';
+
+    let foundAny = false;
+
+    Object.entries(papers).forEach(([year, branches]) => {
+      let yearMatches = year.toLowerCase().includes(searchText);
+
+      const yearBlock = document.createElement('div');
+      yearBlock.className = 'year-block';
+      yearBlock.innerHTML = `<h3>Year: ${year}</h3>`;
+
+      let yearHasMatch = false;
+
+      Object.entries(branches).forEach(([branch, semesters]) => {
+        let branchMatches = branch.toLowerCase().includes(searchText);
+        const branchBlock = document.createElement('div');
+        branchBlock.className = 'branch-block';
+        branchBlock.innerHTML = `<h4>Branch: ${branch}</h4>`;
+
+        Object.entries(semesters).forEach(([semester, papersArr]) => {
+          let semesterMatches = semester.toLowerCase().includes(searchText);
+
+          if (
+            searchText === '' ||
+            yearMatches ||
+            branchMatches ||
+            semesterMatches
+          ) {
+            const semesterBlock = document.createElement('div');
+            semesterBlock.className = 'semester-block';
+            semesterBlock.innerHTML = `<h5>Semester: ${semester}</h5>`;
+
+            const ul = document.createElement('ul');
+
+            papersArr.forEach((paper, index) => {
+  const li = document.createElement('li');
+
+  // Show paper title as plain text (not a link)
+  const titleSpan = document.createElement('span');
+  titleSpan.textContent = paper.title;
+  titleSpan.className = 'paper-title';
+  li.appendChild(titleSpan);
+
+  // Add View button next to title
+  const viewBtn = document.createElement('button');
+  viewBtn.textContent = 'View';
+  viewBtn.className = 'view-btn';
+  viewBtn.onclick = () => {
+  console.log('Opening PDF URL:', paper.pdfUrl);
+  if (!paper.pdfUrl) {
+    alert('PDF URL not found!');
+    return;
+  }
+  const newWin = window.open('', '_blank');
+  if (!newWin) {
+    alert('Popup blocked! Please allow popups for this site.');
+    return;
+  }
+  newWin.document.write(`
+    <html><head><title>${paper.title}</title></head>
+    <body style="margin:0">
+    <embed src="${paper.pdfUrl}" type="application/pdf" width="100%" height="100%"></embed>
+    </body></html>
+  `);
+};
+
+  li.appendChild(viewBtn);
+
+  // If admin logged in, add delete button
+  if (isAdmin) {
+    const delBtn = document.createElement('button');
+    delBtn.textContent = 'Delete';
+    delBtn.className = 'delete-btn';
+    delBtn.onclick = () => deletePaper(year, branch, semester, index);
+    li.appendChild(delBtn);
+  }
+
+  ul.appendChild(li);
+});
+
+            semesterBlock.appendChild(ul);
+            branchBlock.appendChild(semesterBlock);
+            yearBlock.appendChild(branchBlock);
+            yearHasMatch = true;
+          }
+        });
+
+        if (yearHasMatch) {
+          pyqContainer.appendChild(yearBlock);
+          foundAny = true;
+        }
+      });
+    });
+
+    if (!foundAny) {
+      pyqContainer.innerHTML = '<p>No question papers found for your search.</p>';
+    }
+  }
+
+  // Search button event
+  searchBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    displayPYQ();
+    clearSearchBtn.style.display = searchInput.value.trim() ? 'inline-block' : 'none';
+  });
+
+  // Clear search
+  clearSearchBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    searchInput.value = '';
+    clearSearchBtn.style.display = 'none';
+    displayPYQ();
+  });
+
+  // Suggestion form submission
+  suggestionForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const suggestionText = suggestionInput.value.trim();
+    if (suggestionText === '') return;
+
+    const suggestions = loadSuggestions();
+    const newSuggestion = {
+      text: suggestionText,
+      timestamp: new Date().toISOString()
+    };
+    suggestions.push(newSuggestion);
+    saveSuggestions(suggestions);
+    suggestionInput.value = '';
+    displaySuggestions();
+  });
+
+  // Display suggestions
+  function displaySuggestions() {
+    const suggestions = loadSuggestions();
+    suggestionList.innerHTML = '';
+
+    if (suggestions.length === 0) {
+      suggestionList.innerHTML = '<p>No suggestions yet.</p>';
+      return;
+    }
+
+    suggestions.forEach((sugg, idx) => {
+      const div = document.createElement('div');
+      div.className = 'suggestion-item';
+      div.innerHTML = `
+        <p>${sugg.text}</p>
+        <small>${new Date(sugg.timestamp).toLocaleString()}</small>
+      `;
+
+      // If admin, add delete button
+      if (isAdmin) {
+        const delBtn = document.createElement('button');
+        delBtn.textContent = 'Delete';
+        delBtn.className = 'delete-btn';
+        delBtn.onclick = () => {
+          deleteSuggestion(idx);
+        };
+        div.appendChild(delBtn);
+      }
+
+      suggestionList.appendChild(div);
+    });
+  }
+
+  // Delete suggestion (admin only)
+  function deleteSuggestion(index) {
+    if (!confirm('Are you sure you want to delete this suggestion?')) return;
+    const suggestions = loadSuggestions();
+    suggestions.splice(index, 1);
+    saveSuggestions(suggestions);
+    displaySuggestions();
+  }
+
+  // Detect when user scrolls near bottom to show suggestion bar (already visible, so no toggle needed)
+
+  // Initial UI setup
+  updateUIForAdmin();
+  displayPYQ();
+  displaySuggestions();
+  document.getElementById('homeBtn').addEventListener('click', () => {
+  window.location.href = 'home.html';
+});
+
+
+</script>
+</div>
+</body>
+</html>
